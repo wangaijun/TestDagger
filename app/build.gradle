@@ -30,5 +30,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.dagger:dagger:2.19'
+    /**
+     * annotationProcessor是处理注解的工具，是APT（Annotation Processing Tool）的一种，
+     * 简单来说注解提供的都是一种"标记"，真正使这些“标记”工作的APT，在build的过程中，APT（就是dagger-compiler）
+     * 扫描注解（@Component、@Module)
+     * */
     annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
 }

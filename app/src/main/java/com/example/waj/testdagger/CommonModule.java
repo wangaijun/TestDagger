@@ -1,10 +1,12 @@
 package com.example.waj.testdagger;
 
+import com.example.waj.testdagger.annotation.ActivityScope;
+import com.example.waj.testdagger.v.ICommonView;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-class CommonModule {
+public class CommonModule {
     ICommonView iView;
 
     public CommonModule(ICommonView iView) {
@@ -13,7 +15,7 @@ class CommonModule {
 
     @Provides
     @ActivityScope
-    ICommonView provideIcommonView()  {
+    ICommonView provideICommonView()  {
         return iView;
     }
 }

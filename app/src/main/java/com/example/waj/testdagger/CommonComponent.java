@@ -1,6 +1,7 @@
 package com.example.waj.testdagger;
 
-import android.util.Log;
+import com.example.waj.testdagger.annotation.ActivityScope;
+import com.example.waj.testdagger.v.LoginActivity;
 import dagger.Component;
 
 @ActivityScope

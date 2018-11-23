@@ -1,13 +1,16 @@
-package com.example.waj.testdagger;
+package com.example.waj.testdagger.v;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import com.example.waj.testdagger.*;
+import com.example.waj.testdagger.m.User;
+import com.example.waj.testdagger.p.LoginPresenter;
 
 import javax.inject.Inject;
 
-class LoginActivity extends Activity implements ICommonView {
+public class LoginActivity extends Activity implements ICommonView {
     @Inject
     LoginPresenter presenter;
 
@@ -21,7 +24,11 @@ class LoginActivity extends Activity implements ICommonView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerCommonComponent.builder().commonModule(new CommonModule(this)).build().inject(this);
+        CommonModule commonModule = new CommonModule(this);
+
+        CommonComponent build = DaggerCommonComponent.builder().commonModule(commonModule).build();
+
+        build.inject(this);
 
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
