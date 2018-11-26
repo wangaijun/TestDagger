@@ -13,6 +13,8 @@ import javax.inject.Inject;
 public class LoginActivity extends Activity implements ICommonView {
     @Inject
     LoginPresenter presenter;
+    @Inject
+    User user;
 
     @Override
     public Context getContext() {
@@ -33,7 +35,7 @@ public class LoginActivity extends Activity implements ICommonView {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.login(new User());
+                presenter.login(user);
             }
         });
     }
