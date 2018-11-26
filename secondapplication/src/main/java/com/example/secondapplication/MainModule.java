@@ -6,12 +6,14 @@ import dagger.Module;
 import dagger.Provides;
 
 import javax.inject.Singleton;
-
+/**
+ * 负责提供支持依赖注入类的实例
+ * */
 @Module
 public class MainModule {
-    private final DemoApplication mApp;
+    private final Application mApp;
 
-    public MainModule(DemoApplication application){
+    public MainModule(Application application){
         mApp = application;
     }
 
@@ -26,4 +28,8 @@ public class MainModule {
     protected Resources provideResources() {
         return mApp.getResources();
     }
+
+    @Provides
+    @Singleton
+    protected User provideUser(){return new User();}
 }
