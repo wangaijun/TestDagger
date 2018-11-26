@@ -31,5 +31,6 @@ dependencies {
      * 简单来说注解提供的都是一种"标记"，真正使这些“标记”工作的APT，在build的过程中，APT（就是dagger-compiler）
      * 扫描注解（@Component、@Module)
      * */
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
 }

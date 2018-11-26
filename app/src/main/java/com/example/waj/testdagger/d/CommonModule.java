@@ -1,4 +1,4 @@
-package com.example.waj.testdagger;
+package com.example.waj.testdagger.d;
 
 import com.example.waj.testdagger.annotation.ActivityScope;
 import com.example.waj.testdagger.m.User;
